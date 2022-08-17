@@ -142,9 +142,9 @@ properties:
     allOf:
       - $ref: ./payment_settings.yaml
     description: ...
-  user_id:
+  owner:
     type: string
-  created_by:
+  origin:
     type: string
     default: platform
     enum:
