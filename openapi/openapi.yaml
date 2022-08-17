@@ -31,11 +31,7 @@ tags:
     description: |
       TODO: ...
 servers:
-  - url: 'https://{live_mode}.ebanux.link/api/v2.0'
-    variables:
-      live_mode:
-        default: dev
-        description: Live mode allow dev or prod value
+  - url: 'https://dev.ebanux.link/api/v2.0'
 
 paths:
   /subscriptions:
@@ -44,15 +40,15 @@ paths:
     $ref: paths/subscriptions@{id}.yaml
 
 security:
-  - main_auth: []
+  - AWS-Cognito: []
 
 components:
   securitySchemes:
-    main_auth:
+    AWS-Cognito:
       type: oauth2
       flows:
         password:
-          tokenUrl: 'https://{live_mode}.ebanux.link/api/v2.0/oauth/token'
-          refreshUrl: 'https://{live_mode}.ebanux.link/api/v2.0/oauth/token'
+          tokenUrl: 'https://dev.ebanux.link/api/v2.0/oauth/token'
+          refreshUrl: 'https://dev.ebanux.link/api/v2.0/oauth/token'
           scopes:
-            'admin': Admin
+            'manage': Admin all resources

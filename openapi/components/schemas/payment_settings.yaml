@@ -1,0 +1,12 @@
+title: Payment-Settings
+type: object
+properties:
+  payment_method_options:
+    type: object
+  payment_method_types:
+    type: string
+  save_default_payment_method:
+    type: string
+    enum:
+      - off
+      - on_subscription

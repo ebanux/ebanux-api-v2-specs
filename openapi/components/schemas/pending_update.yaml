@@ -1,0 +1,22 @@
+title: Pending-Update
+type: object
+properties:
+  billing_cycle_anchor:
+    allOf:
+      - $ref: ./timestamps.yaml
+    description: ...
+  expires_at:
+    allOf:
+      - $ref: ./timestamps.yaml
+    description: ...
+  subscription_items:
+    type: array
+    items:
+      $ref: ./identifier.yaml
+      description: ...
+  trial_end:
+    allOf:
+      - $ref: ./timestamps.yaml
+    description: ...
+  trial_from_plan:
+    type: boolean

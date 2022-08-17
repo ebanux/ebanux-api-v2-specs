@@ -1,0 +1,11 @@
+title: Subscription-Item
+type: object
+properties:
+  price:
+    type: string
+    description: ...
+  quantity:
+    type: integer
+    minimum: 1
+#  price_data:
+#    type: object

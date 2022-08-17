@@ -1,0 +1,5 @@
+title: Currency
+type: string
+minLength: 3
+maxLength: 3
+description: Three-letter ISO currency code, in lowercase. Must be a supported currency.

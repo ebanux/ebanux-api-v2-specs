@@ -5,7 +5,9 @@ get:
   summary: List all subscriptions
   description: |
     Returns the list of your subscriptions.
-
+  parameters:
+    - $ref: ../components/parameters/query_limit.yaml
+    - $ref: ../components/parameters/query_offset.yaml
   responses:
     '200':
       $ref: ../components/responses/subscription_items.yaml

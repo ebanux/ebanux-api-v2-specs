@@ -1,0 +1,9 @@
+title: Pause-Collection
+type: object
+properties:
+  behavior:
+    type: string
+  resumes_at:
+    allOf:
+      - $ref: ./timestamps.yaml
+    description: ...

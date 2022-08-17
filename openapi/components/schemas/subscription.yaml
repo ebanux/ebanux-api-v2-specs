@@ -1,30 +1,152 @@
 type: "object"
+title: Subscription
 properties:
   id:
     type: string
-    readOnly: true
     description: Item identifier
-  namespace:
+  cancel_at_period_end:
+    type: boolean
+  currency:
+    allOf:
+      - $ref: ./currency.yaml
+  current_period_end:
+    allOf:
+      - $ref: ./timestamps.yaml
+    description: ...
+  current_period_start:
+    allOf:
+      - $ref: ./timestamps.yaml
+    description: ...
+  customer:
     type: string
-  name:
+    description: The identifier of the customer to subscribe.
+  default_payment_method:
     type: string
-    description: Lowercase name without spaces or special characters
   description:
     type: string
-    description: The plain-webhook description
-  path:
+  latest_invoice:
     type: string
-    description: The plain-webhook path
-  method:
+  pending_setup_intent:
     type: string
-    description: The http method
+  pending_update:
+    allOf:
+      - $ref: ./pending_update.yaml
+    description: ...
+  status:
+    type: string
     enum:
-      - get
-      - post
-      - put
-      - delete
-  metadata:
+      - incomplete
+      - incomplete_expired
+      - trialing
+      - active
+      - past_due
+      - canceled
+      - unpaid
+  application:
     type: string
-  authorization_handler:
+  application_fee_percent:
+    type: number
+    minimum: 0
+    maximum: 100
+  automatic_tax:
+    allOf:
+      - $ref: ./automatic_tax.yaml
+    description: ...
+  billing_cycle_anchor:
+    allOf:
+      - $ref: ./timestamps.yaml
+    description: ...
+  billing_thresholds:
+    allOf:
+      - $ref: ./billing_thresholds.yaml
+    description: ...
+  cancel_at:
+    allOf:
+      - $ref: ./timestamps.yaml
+    description: ...
+  canceled_at:
+    allOf:
+      - $ref: ./timestamps.yaml
+    description: ...
+  collection_method:
+    type: string
+    enum:
+      - charge_automatically
+      - send_invoice
+  created:
+    allOf:
+      - $ref: ./timestamps.yaml
+    description: ...
+  days_until_due:
+    allOf:
+      - $ref: ./timestamps.yaml
+    description: ...
+  default_source:
+    type: string
+  discount:
+    allOf:
+      - $ref: ./identifier.yaml
+    description: ...
+  ended_at:
+    allOf:
+      - $ref: ./timestamps.yaml
+    description: ...
+  livemode:
     type: boolean
-    default: false
+  next_pending_invoice_item_invoice:
+    type: number
+  pause_collection:
+    allOf:
+      - $ref: ./pause_collection.yaml
+    description: ...
+  pending_invoice_item_interval:
+    allOf:
+      - $ref: ./pending_invoice_item_interval.yaml
+    description: ...
+  schedule:
+    type: string
+  start_date:
+    allOf:
+      - $ref: ./timestamps.yaml
+    description: ...
+  test_clock:
+    type: string
+  transfer_data:
+    allOf:
+      - $ref: ./transfer_data.yaml
+    description: ...
+  trial_end:
+    allOf:
+      - $ref: ./timestamps.yaml
+    description: ...
+  trial_start:
+    allOf:
+      - $ref: ./timestamps.yaml
+    description: ...
+  metadata:
+    type: object
+  default_tax_rates:
+    type: array
+    items:
+      $ref: ./identifier.yaml
+      description: ...
+  items:
+    type: array
+    items:
+      $ref: ./subscription_item.yaml
+  plan:
+    allOf:
+      - $ref: ./identifier.yaml
+    description: ...
+  payment_settings:
+    allOf:
+      - $ref: ./payment_settings.yaml
+    description: ...
+  user_id:
+    type: string
+  created_by:
+    type: string
+    default: platform
+    enum:
+      - platform
+      - connected_account

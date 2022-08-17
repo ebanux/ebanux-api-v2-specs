@@ -1,0 +1,6 @@
+title: Object-Reference
+type: object
+properties:
+  id:
+    type: string
+    description: Item identifier

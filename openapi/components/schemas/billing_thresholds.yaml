@@ -1,0 +1,6 @@
+title: Billing-Thresholds
+properties:
+  amount_gte:
+    type: number
+  reset_billing_cycle_anchor:
+    type: boolean

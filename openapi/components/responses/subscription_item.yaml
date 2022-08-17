@@ -8,4 +8,6 @@ content:
           type: boolean
           default: true
         result:
-          $ref: ../schemas/subscription.yaml
+          title: Subscription
+          allOf:
+            - $ref: ../schemas/subscription.yaml

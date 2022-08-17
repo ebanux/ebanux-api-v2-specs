@@ -1,0 +1,30 @@
+title: Subscription-Item
+type: object
+properties:
+  id:
+    description: Item identifier
+    type: string
+  price:
+    allOf:
+      - $ref: ./identifier.yaml
+    description: ...
+  plan:
+    allOf:
+      - $ref: ./identifier.yaml
+    description: ...
+  quantity:
+    type: integer
+    minimum: 0
+  billing_thresholds:
+    type: object
+  created:
+    allOf:
+      - $ref: ./timestamps.yaml
+    description: ...
+  tax_rates:
+    type: array
+    items:
+      $ref: ./identifier.yaml
+      description: ...
+  metadata:
+    type: object

@@ -1,11 +1,23 @@
-description: The subscription that will be update
+description: The subscription that will be create
 required: true
 content:
   application/json:
     schema:
-      required: [namespace,name,language,code]
+      required: [customer,items]
       allOf:
         - $ref: ../schemas/subscription_request.yaml
         - properties:
-            att1_put:
+            customer:
               type: string
+              description: The identifier of the customer to subscribe.
+            currency:
+              allOf:
+                - $ref: ../schemas/currency.yaml
+            items:
+              type: array
+              description: A list of up to 20 subscription items, each with an attached price.
+              items:
+                $ref: ../schemas/subscription_item_request.yaml
+
+
+

@@ -1,0 +1,13 @@
+title: Pending-Invoice-Item-Interval
+type: object
+properties:
+  interval:
+    type: string
+    enum:
+      - day
+      - week
+      - month
+      - year
+  interval_count:
+    type: integer
+    minimum: 0

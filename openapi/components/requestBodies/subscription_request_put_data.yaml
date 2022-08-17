@@ -1,4 +1,4 @@
-description: The subscription that will be created
+description: The subscription that will be update
 required: true
 content:
   application/json:
@@ -7,5 +7,21 @@ content:
       allOf:
         - $ref: ../schemas/subscription_request.yaml
         - properties:
-            att1_post:
+            id:
               type: string
+              description: Item identifier
+            clear_usage:
+              type: boolean
+            deleted:
+              type: boolean
+            items:
+              type: array
+              items:
+                type: object
+                title: Subscription-Item
+                allOf:
+                  - $ref: ../schemas/identifier.yaml
+                  - $ref: ../schemas/subscription_item_request.yaml
+
+
+

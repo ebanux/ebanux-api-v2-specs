@@ -1,8 +1,34 @@
 type: "object"
 properties:
-  attr1:
+  cancel_at_period_end:
+    type: boolean
+  default_payment_method:
     type: string
-    readOnly: true
-    description: Attr1 ...
-  attr2:
+  description:
     type: string
+  payment_behavior:
+    type: string
+    enum:
+      - allow_incomplete
+      - error_if_incomplete
+      - pending_if_incomplete
+      - default_incomplete
+  cancel_at:
+    type: string
+    format: date-time-iso8601
+  collection_method:
+    type: string
+    enum:
+      - charge_automatically
+      - send_invoice
+  coupon:
+    type: string
+  days_until_due:
+    type: integer
+  promotion_code:
+    type: string
+  trial_end:
+    type: string
+    format: date-time-iso8601
+  trial_from_plan:
+    type: boolean
