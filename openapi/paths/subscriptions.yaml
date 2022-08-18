@@ -6,8 +6,20 @@ get:
   description: |
     Returns the list of your subscriptions.
   parameters:
-    - $ref: ../components/parameters/query_limit.yaml
-    - $ref: ../components/parameters/query_offset.yaml
+    - $ref: ../components/parameters/commons/query_limit.yaml
+    - $ref: ../components/parameters/commons/query_offset.yaml
+
+    - $ref: ../components/parameters/subscriptions/query_filter_by_content.yaml
+    - $ref: ../components/parameters/subscriptions/query_filter_by_currency.yaml
+    - $ref: ../components/parameters/subscriptions/query_filter_by_customer.yaml
+    - $ref: ../components/parameters/subscriptions/query_filter_by_status.yaml
+
+    - $ref: ../components/parameters/commons/query_filter_by_created_before.yaml
+    - $ref: ../components/parameters/commons/query_filter_by_created_after.yaml
+    - $ref: ../components/parameters/commons/query_filter_by_canceled_before.yaml
+    - $ref: ../components/parameters/commons/query_filter_by_canceled_after.yaml
+    - $ref: ../components/parameters/commons/query_filter_by_cancel_before.yaml
+    - $ref: ../components/parameters/commons/query_filter_by_cancel_after.yaml
   responses:
     '200':
       $ref: ../components/responses/subscription_items.yaml

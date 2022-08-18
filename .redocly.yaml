@@ -2,7 +2,7 @@
 apis:
   ebanux@v2:
     root: openapi/openapi.yaml
-lint:
+styleguide:
   extends:
     - recommended
   rules:

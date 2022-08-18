@@ -1,5 +1,5 @@
 parameters:
-  - $ref: ../components/parameters/path_item_id.yaml
+  - $ref: ../components/parameters/commons/path_item_id.yaml
 
 get:
   tags:

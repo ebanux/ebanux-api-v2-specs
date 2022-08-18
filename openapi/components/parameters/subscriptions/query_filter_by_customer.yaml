@@ -1,0 +1,6 @@
+name: customer
+in: query
+schema:
+  type: string
+  description: |
+    It allows to filter items by customer id.

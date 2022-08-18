@@ -1,5 +1,0 @@
-name: content
-in: query
-schema:
-  type: string
-  description: It allows to filter webhooks that contain the value of the term in their ***topic*** or ***address***.
