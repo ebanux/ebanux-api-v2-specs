@@ -33,7 +33,7 @@ post:
   description: |
     Add a new item.
   requestBody:
-    $ref: ../components/requestBodies/subscription_request_post_data.yaml
+    $ref: ../components/requestBodies/subscription_request_create_data.yaml
   responses:
     '200':
       $ref: ../components/responses/subscription_item.yaml

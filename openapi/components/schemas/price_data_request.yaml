@@ -1,0 +1,30 @@
+title: Price-Data
+type: object
+required: [currency, product, recurring, unit_amount]
+properties:
+  currency:
+    allOf:
+      - $ref: ./currency.yaml
+  product:
+    type: string
+    description: The ID of the product that this price will belong to.
+  recurring:
+    allOf:
+      - $ref: ./interval.yaml
+      - description: The recurring components of a price such as interval and interval_count.
+  tax_behavior:
+    type: string
+    description: Specifies whether the price is considered inclusive of taxes or exclusive of taxes.
+    enum:
+      - inclusive
+      - exclusive
+      - unspecified
+  unit_amount:
+    description: A positive value in cents (or 0 for a free price) representing how much to charge.
+    oneOf:
+      - type: integer
+        description: Integer value.
+      - type: string
+        description: Decimal value with at most 12 decimal places.
+
+

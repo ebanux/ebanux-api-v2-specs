@@ -2,10 +2,10 @@ title: Subscription-Item
 type: object
 properties:
   price:
-    type: string
-    description: ...
+    oneOf:
+      - type: string
+        description: The ID of the price object.
+      - $ref: ./price_data_request.yaml
   quantity:
     type: integer
     minimum: 1
-#  price_data:
-#    type: object

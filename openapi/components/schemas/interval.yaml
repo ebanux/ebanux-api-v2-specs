@@ -1,0 +1,15 @@
+title: Interval
+type: object
+required: [interval]
+properties:
+  interval:
+    type: string
+    description: Specifies billing frequency
+    enum:
+      - day
+      - week
+      - month
+      - year
+  interval_count:
+    type: integer
+    description: The number of intervals between subscription billings

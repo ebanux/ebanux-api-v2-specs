@@ -142,7 +142,7 @@ properties:
     allOf:
       - $ref: ./payment_settings.yaml
     description: ...
-  owner:
+  cognito_user_id:
     type: string
   origin:
     type: string

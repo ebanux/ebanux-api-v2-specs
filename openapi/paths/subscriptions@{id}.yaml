@@ -23,7 +23,7 @@ post:
   description: |
     Find and update the subscription with the given id.
   requestBody:
-    $ref: ../components/requestBodies/subscription_request_put_data.yaml
+    $ref: ../components/requestBodies/subscription_request_update_data.yaml
   responses:
     '200':
       $ref: ../components/responses/subscription_item.yaml
