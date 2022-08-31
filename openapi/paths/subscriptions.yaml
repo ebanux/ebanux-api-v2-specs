@@ -22,7 +22,7 @@ get:
     - $ref: ../components/parameters/commons/query_filter_by_cancel_after.yaml
   responses:
     '200':
-      $ref: ../components/responses/subscription_items.yaml
+      $ref: ../components/responses/subscriptions/items.yaml
     '403':
       description: Forbidden
 post:
@@ -33,9 +33,9 @@ post:
   description: |
     Add a new item.
   requestBody:
-    $ref: ../components/requestBodies/subscription_request_create_data.yaml
+    $ref: ../components/requestBodies/subscriptions/request_create_data.yaml
   responses:
     '200':
-      $ref: ../components/responses/subscription_item.yaml
+      $ref: ../components/responses/subscriptions/item.yaml
     '403':
       description: Forbidden

@@ -5,7 +5,7 @@ content:
     schema:
       required: [namespace,name,language,code]
       allOf:
-        - $ref: ../schemas/subscription_request.yaml
+        - $ref: ../../schemas/subscription_request.yaml
         - properties:
             id:
               type: string
@@ -20,8 +20,8 @@ content:
                 type: object
                 title: Subscription-Item
                 allOf:
-                  - $ref: ../schemas/identifier.yaml
-                  - $ref: ../schemas/subscription_item_request.yaml
+                  - $ref: ../../schemas/identifier.yaml
+                  - $ref: ../../schemas/subscription_item_request.yaml
 
 
 

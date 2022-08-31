@@ -10,4 +10,4 @@ content:
         result:
           title: Subscription
           allOf:
-            - $ref: ../schemas/subscription.yaml
+            - $ref: ../../schemas/subscription.yaml

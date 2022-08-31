@@ -9,10 +9,10 @@ content:
           default: true
         result:
           allOf:
-            - $ref: ../schemas/pagination.yaml
+            - $ref: ../../schemas/pagination.yaml
             - type: object
               properties:
                 data:
                   type: array
                   items:
-                    $ref: ../schemas/subscription.yaml
+                    $ref: ../../schemas/subscription.yaml

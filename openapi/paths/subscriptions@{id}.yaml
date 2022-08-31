@@ -10,7 +10,7 @@ get:
     Find and return the subscription with the given id.
   responses:
     '200':
-      $ref: ../components/responses/subscription_item.yaml
+      $ref: ../components/responses/subscriptions/item.yaml
     '403':
       description: Forbidden
     '404':
@@ -23,10 +23,10 @@ post:
   description: |
     Find and update the subscription with the given id.
   requestBody:
-    $ref: ../components/requestBodies/subscription_request_update_data.yaml
+    $ref: ../components/requestBodies/subscriptions/request_update_data.yaml
   responses:
     '200':
-      $ref: ../components/responses/subscription_item.yaml
+      $ref: ../components/responses/subscriptions/item.yaml
     '403':
       description: Forbidden
     '404':
@@ -41,7 +41,7 @@ delete:
     Find and cancel the subscription with the given id.
   responses:
     '200':
-      $ref: ../components/responses/subscription_item.yaml
+      $ref: ../components/responses/subscriptions/item.yaml
     '403':
       description: Forbidden
     '404':
