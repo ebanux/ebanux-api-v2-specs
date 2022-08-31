@@ -1,0 +1,26 @@
+type: "object"
+properties:
+  name:
+    type: string
+  active:
+    type: boolean
+  description:
+    type: string
+  images:
+    type: array
+    items:
+      type: string
+  package_dimensions:
+    allOf:
+      - $ref: ./package_dimensions.yaml
+    description: ...
+  shippable:
+    type: boolean
+  statement_descriptor:
+    type: string
+  tax_code:
+    type: string
+  unit_label:
+    type: string
+  url:
+    type: string

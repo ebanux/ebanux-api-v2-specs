@@ -5,7 +5,15 @@ properties:
     oneOf:
       - type: string
         description: The ID of the price object.
-      - $ref: ./price_data_request.yaml
+      - allOf:
+         - $ref: ./price_data_request.yaml
+         - type: object
+           required: [currency, product, recurring, unit_amount]
+           properties:
+             product:
+               type: string
+               description: The ID of the product that this price will belong to.
+
   quantity:
     type: integer
     minimum: 1

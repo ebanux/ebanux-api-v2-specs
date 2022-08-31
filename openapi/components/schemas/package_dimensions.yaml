@@ -1,0 +1,14 @@
+title: Package-Dimensions
+properties:
+  height:
+    type: number
+    minimum: 0
+  length:
+    type: number
+    minimum: 0
+  weight:
+    type: number
+    minimum: 0
+  width:
+    type: number
+    minimum: 0

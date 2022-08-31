@@ -38,6 +38,10 @@ paths:
     $ref: paths/subscriptions.yaml
   /subscriptions/{id}:
     $ref: paths/subscriptions@{id}.yaml
+  /products:
+    $ref: paths/products.yaml
+  /products/{id}:
+    $ref: paths/products@{id}.yaml
 
 security:
   - AWS-Cognito: []

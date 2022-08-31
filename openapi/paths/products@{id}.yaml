@@ -1,0 +1,48 @@
+parameters:
+  - $ref: ../components/parameters/commons/path_item_id.yaml
+
+get:
+  tags:
+    - Products
+  operationId: get_product
+  summary: Retrieve an product
+  description: |
+    Find and return the product with the given id.
+  responses:
+    '200':
+      $ref: ../components/responses/products/item.yaml
+    '403':
+      description: Forbidden
+    '404':
+      $ref: ../components/responses/item_not_found.yaml
+post:
+  tags:
+    - Products
+  operationId: update_product
+  summary: Update a product
+  description: |
+    Find and update the product with the given id.
+  requestBody:
+    $ref: ../components/requestBodies/products/request_update_data.yaml
+  responses:
+    '200':
+      $ref: ../components/responses/products/item.yaml
+    '403':
+      description: Forbidden
+    '404':
+      $ref: ../components/responses/item_not_found.yaml
+
+delete:
+  tags:
+    - Products
+  operationId: remove_product
+  summary: Remove a product
+  description: |
+    Find and remove the product with the given id.
+  responses:
+    '200':
+      $ref: ../components/responses/products/item.yaml
+    '403':
+      description: Forbidden
+    '404':
+      $ref: ../components/responses/item_not_found.yaml

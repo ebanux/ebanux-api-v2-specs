@@ -1,0 +1,6 @@
+name: name
+in: query
+schema:
+  type: string
+  description: |
+    It allows to filter items by name.

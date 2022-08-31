@@ -1,13 +1,9 @@
 title: Price-Data
 type: object
-required: [currency, product, recurring, unit_amount]
 properties:
   currency:
     allOf:
       - $ref: ./currency.yaml
-  product:
-    type: string
-    description: The ID of the product that this price will belong to.
   recurring:
     allOf:
       - $ref: ./interval.yaml

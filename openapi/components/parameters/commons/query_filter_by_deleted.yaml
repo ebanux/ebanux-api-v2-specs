@@ -1,0 +1,6 @@
+name: deleted
+in: query
+schema:
+  type: boolean
+  description: |
+    It allows to filter items by deleted attribute.

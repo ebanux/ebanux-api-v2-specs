@@ -1,0 +1,10 @@
+description: The product that will be update
+required: true
+content:
+  application/json:
+    schema:
+      allOf:
+        - $ref: ../../schemas/product_request.yaml
+        - properties:
+            default_price:
+              type: string

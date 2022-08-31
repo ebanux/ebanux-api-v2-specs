@@ -1,0 +1,55 @@
+type: "object"
+title: Product
+properties:
+  id:
+    type: string
+    description: Item identifier
+  active:
+    type: boolean
+  default_price:
+    type: string
+  description:
+    type: string
+  metadata:
+    type: string
+  name:
+    type: string
+  images:
+    type: array
+    items:
+      type: string
+  livemode:
+    type: boolean
+  package_dimensions:
+    allOf:
+      - $ref: ./package_dimensions.yaml
+    description: ...
+  shippable:
+    type: boolean
+  statement_descriptor:
+    type: string
+  tax_code:
+    type: string
+  unit_label:
+    type: string
+  url:
+    type: string
+  created:
+    allOf:
+      - $ref: ./timestamps.yaml
+    description: ...
+  updated:
+    allOf:
+      - $ref: ./timestamps.yaml
+    description: ...
+  cognito_user_id:
+    type: string
+  origin:
+    type: string
+    default: platform
+    enum:
+      - platform
+      - connected
+  deleted:
+    type: boolean
+    default: false

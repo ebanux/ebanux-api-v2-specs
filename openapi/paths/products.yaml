@@ -1,0 +1,39 @@
+get:
+  tags:
+    - Products
+  operationId: get_products
+  summary: List all products
+  description: |
+    Returns the list of your products.
+  parameters:
+    - $ref: ../components/parameters/commons/query_limit.yaml
+    - $ref: ../components/parameters/commons/query_offset.yaml
+
+    - $ref: ../components/parameters/products/query_filter_by_content.yaml
+    - $ref: ../components/parameters/products/query_filter_by_name.yaml
+    - $ref: ../components/parameters/products/query_filter_by_email.yaml
+    - $ref: ../components/parameters/commons/query_filter_by_deleted.yaml
+
+    - $ref: ../components/parameters/commons/query_filter_by_created_before.yaml
+    - $ref: ../components/parameters/commons/query_filter_by_created_after.yaml
+    - $ref: ../components/parameters/commons/query_filter_by_updated_before.yaml
+    - $ref: ../components/parameters/commons/query_filter_by_updated_after.yaml
+  responses:
+    '200':
+      $ref: ../components/responses/products/items.yaml
+    '403':
+      description: Forbidden
+post:
+  tags:
+    - Products
+  operationId: create_product
+  summary: Create a product
+  description: |
+    Add a new item.
+  requestBody:
+    $ref: ../components/requestBodies/products/request_create_data.yaml
+  responses:
+    '200':
+      $ref: ../components/responses/products/item.yaml
+    '403':
+      description: Forbidden

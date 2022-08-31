@@ -1,0 +1,17 @@
+description: The product that will be create
+required: true
+content:
+  application/json:
+    schema:
+      required: [name]
+      allOf:
+        - $ref: ../../schemas/product_request.yaml
+        - properties:
+            default_price_data:
+              allOf:
+                - $ref: ../../schemas/price_data_request.yaml
+                - type: object
+                  required: [currency, unit_amount]
+                  properties:
+                    currency_options:
+                      type: object
