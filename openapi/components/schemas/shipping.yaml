@@ -1,0 +1,11 @@
+title: Shipping
+type: object
+properties:
+  name:
+    type: string
+  phone:
+    type: string
+  address:
+    allOf:
+      - $ref: ./address.yaml
+    description: ...

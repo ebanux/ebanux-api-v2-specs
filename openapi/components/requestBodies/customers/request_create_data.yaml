@@ -1,0 +1,11 @@
+description: The customer that will be create
+required: true
+content:
+  application/json:
+    schema:
+      allOf:
+        - $ref: ../../schemas/customer_request.yaml
+        - properties:
+            payment_method:
+              type: string
+              description: ...

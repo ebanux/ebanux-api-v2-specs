@@ -1,0 +1,7 @@
+name: content
+in: query
+schema:
+  type: string
+  description: |
+    It allows to filter products that contain this value in their
+    ***name***, ***email*** or ***description***.

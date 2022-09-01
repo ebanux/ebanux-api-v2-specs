@@ -1,0 +1,38 @@
+type: "object"
+properties:
+  name:
+    type: string
+  email:
+    type: string
+  phone:
+    type: string
+  description:
+    type: string
+  address:
+    allOf:
+      - $ref: ./address.yaml
+    description: ...
+  shipping:
+    allOf:
+      - $ref: ./shipping.yaml
+    description: ...
+  payment_method:
+    type: string
+  tax_exempt:
+    type: string
+    enum:
+      - none
+      - exempt
+      - reverse
+  balance:
+    type: number
+  invoice_prefix:
+    type: string
+    minLength: 3
+    maxLength: 12
+  next_invoice_sequence:
+    type: number
+  coupon:
+    type: string
+  promotion_code:
+    type: string

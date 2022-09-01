@@ -1,0 +1,82 @@
+type: "object"
+title: Customer
+properties:
+  id:
+    type: string
+    description: Item identifier
+  name:
+    type: string
+  email:
+    type: string
+  phone:
+    type: string
+  description:
+    type: string
+  address:
+    allOf:
+      - $ref: ./address.yaml
+    description: ...
+  shipping:
+    allOf:
+      - $ref: ./shipping.yaml
+    description: ...
+  metadata:
+    type: string
+  balance:
+    type: number
+  cash_balance:
+    allOf:
+      - $ref: ./cash_balance.yaml
+    description: ...
+  currency:
+    allOf:
+      - $ref: ./currency.yaml
+  default_source:
+    type: string
+  delinquent:
+    type: boolean
+  discount:
+    allOf:
+      - $ref: ./discount.yaml
+    description: ...
+  invoice_credit_balance:
+    type: object
+  invoice_prefix:
+    type: string
+    minLength: 3
+    maxLength: 12
+  livemode:
+    type: boolean
+  next_invoice_sequence:
+    type: number
+  tax_exempt:
+    type: string
+    enum:
+      - none
+      - exempt
+      - reverse
+  test_clock:
+    type: string
+  invoice_settings:
+    allOf:
+      - $ref: ./invoice_settings.yaml
+  preferred_locales:
+    type: array
+    items:
+      $ref: ./identifier.yaml
+      description: ...
+  created:
+    allOf:
+      - $ref: ./timestamps.yaml
+    description: ...
+  cognito_user_id:
+    type: string
+  origin:
+    type: string
+    default: platform
+    enum:
+      - platform
+      - connected
+  deleted:
+    type: boolean
+    default: false

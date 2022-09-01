@@ -1,0 +1,48 @@
+parameters:
+  - $ref: ../components/parameters/commons/path_item_id.yaml
+
+get:
+  tags:
+    - Customers
+  operationId: get_customer
+  summary: Retrieve a customer
+  description: |
+    Find and return the customer with the given id.
+  responses:
+    '200':
+      $ref: ../components/responses/customers/item.yaml
+    '403':
+      description: Forbidden
+    '404':
+      $ref: ../components/responses/item_not_found.yaml
+post:
+  tags:
+    - Customers
+  operationId: update_customer
+  summary: Update a customer
+  description: |
+    Find and update the customer with the given id.
+  requestBody:
+    $ref: ../components/requestBodies/customers/request_update_data.yaml
+  responses:
+    '200':
+      $ref: ../components/responses/customers/item.yaml
+    '403':
+      description: Forbidden
+    '404':
+      $ref: ../components/responses/item_not_found.yaml
+
+delete:
+  tags:
+    - Customers
+  operationId: remove_customer
+  summary: Remove a customer
+  description: |
+    Find and remove the customer with the given id.
+  responses:
+    '200':
+      $ref: ../components/responses/customers/item.yaml
+    '403':
+      description: Forbidden
+    '404':
+      $ref: ../components/responses/item_not_found.yaml

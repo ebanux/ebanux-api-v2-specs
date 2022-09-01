@@ -1,39 +1,37 @@
 get:
   tags:
-    - Products
-  operationId: get_products
-  summary: List all products
+    - Customers
+  operationId: get_customers
+  summary: List all customers
   description: |
-    Returns the list of your products.
+    Returns the list of your customers.
   parameters:
     - $ref: ../components/parameters/commons/query_limit.yaml
     - $ref: ../components/parameters/commons/query_offset.yaml
 
-    - $ref: ../components/parameters/products/query_filter_by_content.yaml
+    - $ref: ../components/parameters/customers/query_filter_by_content.yaml
     - $ref: ../components/parameters/commons/query_filter_by_name.yaml
     - $ref: ../components/parameters/commons/query_filter_by_email.yaml
     - $ref: ../components/parameters/commons/query_filter_by_deleted.yaml
 
     - $ref: ../components/parameters/commons/query_filter_by_created_before.yaml
     - $ref: ../components/parameters/commons/query_filter_by_created_after.yaml
-    - $ref: ../components/parameters/commons/query_filter_by_updated_before.yaml
-    - $ref: ../components/parameters/commons/query_filter_by_updated_after.yaml
   responses:
     '200':
-      $ref: ../components/responses/products/items.yaml
+      $ref: ../components/responses/customers/items.yaml
     '403':
       description: Forbidden
 post:
   tags:
-    - Products
-  operationId: create_product
-  summary: Create a product
+    - Customers
+  operationId: create_customer
+  summary: Create a customer
   description: |
     Add a new item.
   requestBody:
-    $ref: ../components/requestBodies/products/request_create_data.yaml
+    $ref: ../components/requestBodies/customers/request_create_data.yaml
   responses:
     '200':
-      $ref: ../components/responses/products/item.yaml
+      $ref: ../components/responses/customers/item.yaml
     '403':
       description: Forbidden

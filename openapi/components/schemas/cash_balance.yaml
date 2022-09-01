@@ -1,0 +1,14 @@
+title: Cash-Balance
+type: object
+properties:
+  customer:
+    type: string
+  livemode:
+    type: boolean
+  available:
+    type: object
+  settings:
+    type: object
+    properties:
+      reconciliation_mode: 
+        type: string

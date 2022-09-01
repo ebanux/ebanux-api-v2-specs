@@ -42,6 +42,10 @@ paths:
     $ref: paths/products.yaml
   /products/{id}:
     $ref: paths/products@{id}.yaml
+  /customers:
+    $ref: paths/customers.yaml
+  /customers/{id}:
+    $ref: paths/customers@{id}.yaml
 
 security:
   - AWS-Cognito: []

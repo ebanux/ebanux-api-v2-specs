@@ -1,0 +1,31 @@
+title: Discount
+type: object
+properties:
+  id:
+    type: string
+  coupon:
+    allOf:
+      - $ref: ./identifier.yaml
+    description: ...
+  promotion_code:
+    allOf:
+      - $ref: ./identifier.yaml
+    description: ...
+  customer:
+    type: string
+  end:
+    allOf:
+      - $ref: ./timestamps.yaml
+    description: ...
+  start:
+    allOf:
+      - $ref: ./timestamps.yaml
+    description: ...
+  subscription:
+    type: string
+  checkout_session:
+    type: string
+  invoice:
+    type: string
+  invoice_item:
+    type: string

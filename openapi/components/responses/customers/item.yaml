@@ -1,0 +1,13 @@
+description: Success
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        success:
+          type: boolean
+          default: true
+        result:
+          title: Customer
+          allOf:
+            - $ref: ../../schemas/customer.yaml

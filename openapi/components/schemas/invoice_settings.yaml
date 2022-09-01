@@ -1,0 +1,23 @@
+title: Invoice-Settings
+type: object
+properties:
+  default_payment_method:
+    type: string
+  footer:
+    type: string
+  available:
+    type: object
+  rendering_options:
+    type: object
+    properties:
+        amount_tax_display:
+          type: string
+  custom_fields:
+    type: array
+    items:
+      type: object
+      properties:
+        name:
+          type: string
+        value:
+          type: string
