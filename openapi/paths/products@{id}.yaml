@@ -11,10 +11,10 @@ get:
   responses:
     '200':
       $ref: ../components/responses/products/item.yaml
-    '403':
-      description: Forbidden
+    '401':
+      $ref: ../components/responses/commons/unauthorized.yaml
     '404':
-      $ref: ../components/responses/item_not_found.yaml
+      $ref: ../components/responses/commons/item_not_found.yaml
 post:
   tags:
     - Products
@@ -27,10 +27,10 @@ post:
   responses:
     '200':
       $ref: ../components/responses/products/item.yaml
-    '403':
-      description: Forbidden
+    '401':
+      $ref: ../components/responses/commons/unauthorized.yaml
     '404':
-      $ref: ../components/responses/item_not_found.yaml
+      $ref: ../components/responses/commons/item_not_found.yaml
 
 delete:
   tags:
@@ -42,7 +42,7 @@ delete:
   responses:
     '200':
       $ref: ../components/responses/products/item.yaml
-    '403':
-      description: Forbidden
+    '401':
+      $ref: ../components/responses/commons/unauthorized.yaml
     '404':
-      $ref: ../components/responses/item_not_found.yaml
+      $ref: ../components/responses/commons/item_not_found.yaml

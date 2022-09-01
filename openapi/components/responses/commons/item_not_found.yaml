@@ -2,8 +2,11 @@ description: Not found
 content:
   application/json:
     schema:
-      type: "object"
+      type: object
       properties:
-        status:
+        success:
+          type: boolean
+          default: false
+        result:
           type: string
           default: 'item not found'

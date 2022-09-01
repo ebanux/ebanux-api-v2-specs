@@ -1,0 +1,29 @@
+description: Unauthorized
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        success:
+          type: boolean
+          default: false
+        result:
+          type: string
+          default: Not a valid JWT token
+    examples:
+      'Invalid token':
+        value:
+          success: false
+          result: Not a valid JWT token
+      'Expired token':
+        value:
+          success: false
+          result: jwt expired
+      'Unconfirmed user':
+        value:
+          success: false
+          result: The user is not yet confirmed.
+      'Invalid credentials':
+        value:
+          success: false
+          result: Incorrect username or password.

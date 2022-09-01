@@ -19,8 +19,8 @@ get:
   responses:
     '200':
       $ref: ../components/responses/customers/items.yaml
-    '403':
-      description: Forbidden
+    '401':
+      $ref: ../components/responses/commons/unauthorized.yaml
 post:
   tags:
     - Customers
@@ -33,5 +33,5 @@ post:
   responses:
     '200':
       $ref: ../components/responses/customers/item.yaml
-    '403':
-      description: Forbidden
+    '401':
+      $ref: ../components/responses/commons/unauthorized.yaml

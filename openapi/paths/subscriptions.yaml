@@ -23,8 +23,8 @@ get:
   responses:
     '200':
       $ref: ../components/responses/subscriptions/items.yaml
-    '403':
-      description: Forbidden
+    '401':
+      $ref: ../components/responses/commons/unauthorized.yaml
 post:
   tags:
     - Subscriptions
@@ -37,5 +37,5 @@ post:
   responses:
     '200':
       $ref: ../components/responses/subscriptions/item.yaml
-    '403':
-      description: Forbidden
+    '401':
+      $ref: ../components/responses/commons/unauthorized.yaml

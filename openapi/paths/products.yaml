@@ -21,8 +21,8 @@ get:
   responses:
     '200':
       $ref: ../components/responses/products/items.yaml
-    '403':
-      description: Forbidden
+    '401':
+      $ref: ../components/responses/commons/unauthorized.yaml
 post:
   tags:
     - Products
@@ -35,5 +35,5 @@ post:
   responses:
     '200':
       $ref: ../components/responses/products/item.yaml
-    '403':
-      description: Forbidden
+    '401':
+      $ref: ../components/responses/commons/unauthorized.yaml
