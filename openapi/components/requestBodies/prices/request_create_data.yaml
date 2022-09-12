@@ -4,11 +4,6 @@ content:
   application/json:
     schema:
       required: [currency, product]
-#      if:
-#        properties: billing_scheme
-#          const: per_unit
-#            then: required [unit_amount, transform_quantity]
-#            else: required [tiers_mode, tiers]
       allOf:
         - $ref: ../../schemas/price_request.yaml
         - properties:
@@ -35,10 +30,6 @@ content:
             recurring:
               $ref: ../../schemas/recurring.yaml
               required: [interval]
-#              if:
-#                properties: usage_type
-#                  const: metered
-#                    then: required [aggregate_usage]
             tiers_mode:
               type: string
               enum:
