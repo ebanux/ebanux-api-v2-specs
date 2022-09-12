@@ -1,0 +1,14 @@
+title: Product-Data
+type: object
+required: [name]
+properties:
+  name:
+    type: string
+  active:
+    type: boolean
+  statement_descriptor:
+    type: string
+  tax_code:
+    type: string
+  unit_label:
+    type: string

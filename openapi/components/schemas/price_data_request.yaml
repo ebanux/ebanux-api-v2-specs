@@ -8,6 +8,7 @@ properties:
     allOf:
       - $ref: ./interval.yaml
       - description: The recurring components of a price such as interval and interval_count.
+    required: [interval]
   tax_behavior:
     type: string
     description: Specifies whether the price is considered inclusive of taxes or exclusive of taxes.

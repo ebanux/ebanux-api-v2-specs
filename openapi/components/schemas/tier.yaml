@@ -1,0 +1,17 @@
+title: Tier
+properties:
+  flat_amount:
+    type: integer
+    minimum: 0
+  flat_amount_decimal:
+    type: string
+    maxLength: 12
+  unit_amount:
+    type: integer
+    minimum: 0
+  unit_amount_decimal:
+    type: string
+    maxLength: 12
+  up_to:
+    type: integer
+    minimum: 0

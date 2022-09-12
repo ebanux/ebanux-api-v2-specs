@@ -1,0 +1,9 @@
+name: billing_scheme
+in: query
+schema:
+  type: string
+  enum:
+    - per_unit
+    - tiered
+  description: |
+    It allows to filter items by billing_scheme.

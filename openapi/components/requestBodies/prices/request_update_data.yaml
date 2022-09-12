@@ -1,0 +1,7 @@
+description: The price that will be update
+required: true
+content:
+  application/json:
+    schema:
+      allOf:
+        - $ref: ../../schemas/price_request.yaml

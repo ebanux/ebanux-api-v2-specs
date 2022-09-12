@@ -1,0 +1,9 @@
+name: type
+in: query
+schema:
+  type: string
+  enum:
+    - one_time
+    - recurring
+  description: |
+    It allows to filter items by type.

@@ -1,0 +1,20 @@
+type: "object"
+properties:
+  nickname:
+    type: string
+  active:
+    type: boolean
+  currency_options:
+    $ref: ./currency_options_request.yaml
+  lookup_key:
+    type: string
+    maxLength: 200
+  transfer_lookup_key:
+    type: boolean
+  tax_behavior:
+    type: string
+    enum:
+      - inclusive
+      - exclusive
+      - unspecified
+    default: unspecified

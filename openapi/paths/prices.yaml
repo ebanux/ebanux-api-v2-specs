@@ -1,0 +1,43 @@
+get:
+  tags:
+    - Prices
+  operationId: get_prices
+  summary: List all prices
+  description: |
+    Returns the list of your prices.
+  parameters:
+    - $ref: ../components/parameters/commons/query_limit.yaml
+    - $ref: ../components/parameters/commons/query_offset.yaml
+
+    - $ref: ../components/parameters/prices/query_filter_by_content.yaml
+    - $ref: ../components/parameters/commons/query_filter_by_name.yaml
+    - $ref: ../components/parameters/prices/query_filter_by_nickname.yaml
+    - $ref: ../components/parameters/prices/query_filter_by_product.yaml
+    - $ref: ../components/parameters/commons/query_filter_by_currency.yaml
+    - $ref: ../components/parameters/prices/query_filter_by_type.yaml
+    - $ref: ../components/parameters/prices/query_filter_by_billing_scheme.yaml
+    - $ref: ../components/parameters/prices/query_filter_by_tax_behavior.yaml
+    - $ref: ../components/parameters/prices/query_filter_by_tiers_mode.yaml
+    - $ref: ../components/parameters/prices/query_filter_by_active.yaml
+
+    - $ref: ../components/parameters/commons/query_filter_by_created_before.yaml
+    - $ref: ../components/parameters/commons/query_filter_by_created_after.yaml
+  responses:
+    '200':
+      $ref: ../components/responses/prices/items.yaml
+    '401':
+      $ref: ../components/responses/commons/unauthorized.yaml
+post:
+  tags:
+    - Prices
+  operationId: create_price
+  summary: Create a price
+  description: |
+    Add a new item.
+  requestBody:
+    $ref: ../components/requestBodies/prices/request_create_data.yaml
+  responses:
+    '200':
+      $ref: ../components/responses/prices/item.yaml
+    '401':
+      $ref: ../components/responses/commons/unauthorized.yaml

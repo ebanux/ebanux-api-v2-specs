@@ -1,6 +1,5 @@
 title: Interval
 type: object
-required: [interval]
 properties:
   interval:
     type: string

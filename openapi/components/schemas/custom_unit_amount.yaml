@@ -1,0 +1,12 @@
+title: Custom-Unit-Amount
+type: object
+properties:
+  maximum:
+    type: number
+    minimum: 0
+  minimum:
+    type: number
+    minimum: 0
+  preset:
+    type: number
+    minimum: 0

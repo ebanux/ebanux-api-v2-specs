@@ -1,0 +1,82 @@
+type: "object"
+title: Price
+properties:
+  id:
+    type: string
+    description: Item identifier
+  active:
+    type: boolean
+  currency:
+    $ref: ./currency.yaml
+  metadata:
+    type: string
+  nickname:
+    type: string
+  product:
+    type: string
+    description: The product identifier.
+  recurring:
+    $ref: ./recurring.yaml
+  type:
+    type: string
+    enum:
+      - one_time
+      - recurring
+  unit_amount:
+    type: integer
+    minimum: 0
+    description: A positive value in cents (or 0 for a free price) representing how much to charge.
+  unit_amount_decimal:
+    type: string
+    maxLength: 12
+    description: Decimal value with at most 12 decimal places.
+  billing_scheme:
+    type: string
+    enum:
+      - per_unit
+      - tiered
+  currency_options:
+    allOf:
+      - $ref: ./currency_options.yaml
+      - properties:
+          tiers:
+            type: array
+            items:
+              $ref: ./tier.yaml
+  custom_unit_amount:
+    $ref: ./custom_unit_amount.yaml
+  livemode:
+    type: boolean
+  lookup_key:
+    type: string
+    maxLength: 200
+  tax_behavior:
+    type: string
+    enum:
+      - inclusive
+      - exclusive
+      - unspecified
+    default: unspecified
+  tiers:
+    type: array
+    items:
+      $ref: ./tier.yaml
+  tiers_mode:
+    type: string
+    enum:
+      - volume
+      - graduated
+  transform_quantity:
+    $ref: ./transform_quantity.yaml
+  created:
+    allOf:
+      - $ref: ./timestamps.yaml
+    description: ...
+  cognito_user_id:
+    type: string
+  origin:
+    type: string
+    default: platform
+    enum:
+      - platform
+      - connected

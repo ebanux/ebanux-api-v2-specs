@@ -1,0 +1,11 @@
+title: Transform-Quantity
+type: object
+properties:
+  divide_by:
+    type: integer
+    minimum: 1
+  round:
+    type: string
+    enum:
+      - up
+      - down

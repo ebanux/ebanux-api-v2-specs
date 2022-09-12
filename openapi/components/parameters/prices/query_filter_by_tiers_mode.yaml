@@ -1,0 +1,9 @@
+name: tiers_mode
+in: query
+schema:
+  type: string
+  enum:
+    - volume
+    - graduated
+  description: |
+    It allows to filter items by tiers_mode, but only when the billing_scheme=tiered filter is also set.

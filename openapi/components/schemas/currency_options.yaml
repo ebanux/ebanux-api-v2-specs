@@ -1,0 +1,21 @@
+title: Currency-Options
+type: object
+properties:
+  custom_unit_amount:
+    allOf:
+      - $ref: ./custom_unit_amount.yaml
+  tax_behavior:
+    type: string
+    enum:
+      - inclusive
+      - exclusive
+      - unspecified
+    default: unspecified
+  unit_amount:
+    type: integer
+    minimum: 0
+    description: A positive value in cents (or 0 for a free price) representing how much to charge.
+  unit_amount_decimal:
+    type: string
+    maxLength: 12
+    description: Decimal value with at most 12 decimal places.

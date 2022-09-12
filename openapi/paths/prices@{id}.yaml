@@ -1,0 +1,33 @@
+parameters:
+  - $ref: ../components/parameters/commons/path_item_id.yaml
+
+get:
+  tags:
+    - Prices
+  operationId: get_price
+  summary: Retrieve a price
+  description: |
+    Find and return the price with the given id.
+  responses:
+    '200':
+      $ref: ../components/responses/prices/item.yaml
+    '401':
+      $ref: ../components/responses/commons/unauthorized.yaml
+    '404':
+      $ref: ../components/responses/commons/item_not_found.yaml
+post:
+  tags:
+    - Prices
+  operationId: update_price
+  summary: Update a price
+  description: |
+    Find and update the price with the given id.
+  requestBody:
+    $ref: ../components/requestBodies/prices/request_update_data.yaml
+  responses:
+    '200':
+      $ref: ../components/responses/prices/item.yaml
+    '401':
+      $ref: ../components/responses/commons/unauthorized.yaml
+    '404':
+      $ref: ../components/responses/commons/item_not_found.yaml

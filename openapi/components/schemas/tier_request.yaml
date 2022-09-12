@@ -1,0 +1,30 @@
+type: object
+title: Tier
+required: [up_to, flat_amount, unit_amount]
+oneOf:
+  - title: Tier with flat-amount
+    properties:
+      flat_amount:
+        description: |
+          A positive value in cents (or 0 for a free price) representing how much to charge for an entire tier,
+          regardless of the number of units in the tier.
+        oneOf:
+          - type: integer
+            description: Integer value.
+          - type: string
+            description: Decimal value with at most 12 decimal places.
+  - title: Tier with unit-amount
+    properties:
+      unit_amount:
+        description: |
+          A positive value in cents (or 0 for a free price) representing how much to charge for each individual unit
+          for which this tier applies.
+        oneOf:
+          - type: integer
+            description: Integer value.
+          - type: string
+            description: Decimal value with at most 12 decimal places.
+properties:
+  up_to:
+    type: integer
+    minimum: 0

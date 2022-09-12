@@ -18,6 +18,9 @@ tags:
   - name: Products
     description: |
       TODO: ...
+  - name: Prices
+    description: |
+      TODO: ...
   - name: Payment Links
     description: |
       TODO: ...
@@ -46,7 +49,10 @@ paths:
     $ref: paths/customers.yaml
   /customers/{id}:
     $ref: paths/customers@{id}.yaml
-
+  /prices:
+    $ref: paths/prices.yaml
+  /prices/{id}:
+    $ref: paths/prices@{id}.yaml
 security:
   - AWS-Cognito: []
 

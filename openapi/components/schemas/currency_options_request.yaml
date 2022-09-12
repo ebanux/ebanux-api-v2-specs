@@ -1,0 +1,31 @@
+title: Currency-Options
+type: object
+required: [unit_amount]
+properties:
+  custom_unit_amount:
+    allOf:
+      - $ref: ./custom_unit_amount.yaml
+      - properties:
+          enabled:
+            type: boolean
+    required: [enabled]
+  tiers:
+    type: array
+    items:
+      $ref: ./tier_request.yaml
+  tax_behavior:
+    type: string
+    enum:
+      - inclusive
+      - exclusive
+      - unspecified
+    default: unspecified
+  unit_amount:
+    description: |
+      A positive value in cents (or 0 for a free price) representing how much to charge for each individual unit
+      for which this tier applies.
+    oneOf:
+      - type: integer
+        description: Integer value.
+      - type: string
+        description: Decimal value with at most 12 decimal places.

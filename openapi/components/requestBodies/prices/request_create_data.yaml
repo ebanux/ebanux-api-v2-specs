@@ -1,0 +1,60 @@
+description: The price that will be create
+required: true
+content:
+  application/json:
+    schema:
+      required: [currency, product]
+#      if:
+#        properties: billing_scheme
+#          const: per_unit
+#            then: required [unit_amount, transform_quantity]
+#            else: required [tiers_mode, tiers]
+      allOf:
+        - $ref: ../../schemas/price_request.yaml
+        - properties:
+            currency:
+              $ref: ../../schemas/currency.yaml
+            product:
+              oneOf:
+                - type: string
+                  description: The ID of the product object.
+                - $ref: ../../schemas/product_data_request.yaml
+            billing_scheme:
+              type: string
+              enum:
+                - per_unit
+                - tiered
+              default: per_unit
+            unit_amount:
+              description: A positive value in cents (or 0 for a free price) representing how much to charge.
+              oneOf:
+                - type: integer
+                  description: Integer value.
+                - type: string
+                  description: Decimal value with at most 12 decimal places.
+            recurring:
+              $ref: ../../schemas/recurring.yaml
+              required: [interval]
+#              if:
+#                properties: usage_type
+#                  const: metered
+#                    then: required [aggregate_usage]
+            tiers_mode:
+              type: string
+              enum:
+                - volume
+                - graduated
+            tiers:
+              type: array
+              items:
+                $ref: ../../schemas/tier_request.yaml
+            transform_quantity:
+              $ref: ../../schemas/transform_quantity.yaml
+              required: [divide_by, round]
+            custom_unit_amount:
+              allOf:
+                - $ref: ../../schemas/custom_unit_amount.yaml
+                - properties:
+                    enabled:
+                      type: boolean
+              required: [enabled]

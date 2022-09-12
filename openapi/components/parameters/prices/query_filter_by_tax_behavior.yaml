@@ -1,0 +1,10 @@
+name: tax_behavior
+in: query
+schema:
+  type: string
+  enum:
+    - inclusive
+    - exclusive
+    - unspecified
+  description: |
+    It allows to filter items by tax_behavior.

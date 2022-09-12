@@ -1,0 +1,19 @@
+title: Recurring
+type: object
+allOf:
+  - $ref: ./interval.yaml
+  - properties:
+      aggregate_usage:
+        type: string
+        enum:
+          - sum
+          - last_during_period
+          - last_ever
+          - max
+        default: sum
+      usage_type:
+        type: string
+        enum:
+          - metered
+          - licensed
+        default: licensed
