@@ -10,7 +10,7 @@ get:
     - $ref: ../components/parameters/commons/query_offset.yaml
 
     - $ref: ../components/parameters/subscriptions/query_filter_by_content.yaml
-    - $ref: ../components/parameters/subscriptions/query_filter_by_currency.yaml
+    - $ref: ../components/parameters/commons/query_filter_by_currency.yaml
     - $ref: ../components/parameters/subscriptions/query_filter_by_customer.yaml
     - $ref: ../components/parameters/subscriptions/query_filter_by_status.yaml
 
