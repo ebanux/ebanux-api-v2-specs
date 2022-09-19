@@ -1,0 +1,85 @@
+description: The payment-link that will be create
+required: true
+content:
+  application/json:
+    schema:
+      required: [line_items]
+      allOf:
+        - $ref: ../../schemas/payment_link_request.yaml
+        - properties:
+            line_items:
+              type: array
+              items:
+                type: object
+                required: [price, quantity]
+                title: Line-Item
+                properties:
+                  price:
+                    type: string
+                  adjustable_quantity:
+                    type: object
+                    required: [enabled]
+                    title: Adjustable-Quantity
+                    properties:
+                      enabled:
+                        type: boolean
+                      minimum:
+                        type: integer
+                        minimum: 1
+                        maximum: 99
+                      maximum:
+                        type: integer
+                        minimum: 1
+                        maximum: 99
+                  quantity:
+                    type: integer
+                    minimum: 1
+            consent_collection:
+              type: object
+              title: Consent-Collection
+              properties:
+                promotions:
+                  type: string
+                  enum:
+                    - auto
+                    - none
+            currency:
+              $ref: ../../schemas/currency.yaml
+            payment_intent_data:
+              type: object
+              properties:
+                capture_method:
+                  type: string
+                  enum: [automatic, manual]
+                setup_future_usage:
+                  type: string
+                  enum: [on_session, off_session]
+            phone_number_collection:
+              type: object
+              required: [enabled]
+              properties:
+                enabled:
+                  type: boolean
+            shipping_options:
+              type: array
+              items:
+                type: object
+                properties:
+                  shipping_rate:
+                    type: string
+            submit_type:
+              type: string
+              enum: [auto, pay, book, donate]
+            subscription_data:
+              type: object
+              properties:
+                description:
+                  type: string
+                trial_period_days:
+                  type: integer
+            tax_id_collection:
+              type: object
+              required: [enabled]
+              properties:
+                enabled:
+                  type: boolean

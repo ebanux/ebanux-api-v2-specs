@@ -1,0 +1,18 @@
+type: "object"
+title: After-Completion
+properties:
+  type:
+    type: string
+    enum:
+      - redirect
+      - hosted_confirmation
+  hosted_confirmation:
+    type: object
+    properties:
+      custom_message:
+        type: string
+  redirect:
+    type: object
+    properties:
+      url:
+        type: string

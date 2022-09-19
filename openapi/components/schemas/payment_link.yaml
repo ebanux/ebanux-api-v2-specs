@@ -1,0 +1,126 @@
+type: "object"
+title: Product
+properties:
+  id:
+    type: string
+    description: Item identifier
+  active:
+    type: boolean
+
+  line_items:
+    type: array
+    items:
+      type: object
+  metadata:
+    type: object
+  payment_method_types:
+    type: array
+    items:
+      type: string
+  url:
+    type: array
+    items:
+      type: string
+  after_completion:
+    allOf:
+      - $ref: ./payment_link_after_completion.yaml
+  allow_promotion_codes:
+    type: boolean
+  application_fee_amount:
+    type: number
+  application_fee_percent:
+    type: number
+  automatic_tax:
+    type: object
+    properties:
+      enabled:
+        type: boolean   
+  billing_address_collection:
+    type: string
+    enum: [auto, required]
+  consent_collection:
+    type: object
+    properties:
+      promotions:
+        type: string
+  currency:
+    allOf:
+      - $ref: ./currency.yaml
+  customer_creation:
+    type: string
+    enum: [if_required, always]
+  livemode:
+    type: boolean
+  on_behalf_of:
+    type: string
+  payment_intent_data:
+    type: object
+    properties:
+      capture_method:
+        type: string
+        enum: [automatic, manual]
+      setup_future_usage:
+        type: string
+        enum: [on_session, off_session]
+  payment_method_collection:
+    type: string
+    enum: [always, if_required]
+  phone_number_collection:
+    type: object
+    properties:
+      enabled:
+        type: boolean
+  shipping_address_collection:
+    type: object
+    properties:
+      allowed_countries:
+        type: array
+        items:
+          type: string
+  shipping_options:
+    type: array
+    items:
+      type: object
+      properties:
+        shipping_amount:
+          type: number
+        shipping_rate:
+          type: string
+  submit_type:
+    type: string
+    enum: [auto, pay, book, donate]
+  subscription_data:
+    type: object
+    properties:
+      description:
+        type: string
+      trial_period_days:
+        type: number
+  tax_id_collection:
+    type: object
+    properties:
+      enabled:
+        type: boolean
+  transfer_data:
+    allOf:
+      - $ref: ./payment_link_transfer_data.yaml
+    description: ...
+  createdAt:
+    allOf:
+      - $ref: ./timestamps.yaml
+    description: ...
+  updatedAt:
+    allOf:
+      - $ref: ./timestamps.yaml
+    description: ...
+  cognito_user_id:
+    type: string
+  origin:
+    type: string
+    default: platform
+    enum:
+      - platform
+      - connected
+  deleted:
+    type: boolean
+    default: false

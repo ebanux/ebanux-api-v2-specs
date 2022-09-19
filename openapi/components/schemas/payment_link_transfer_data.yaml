@@ -1,0 +1,7 @@
+title: Transfer-Data
+type: object
+properties:
+  amount:
+    type: number
+  destination:
+    type: string

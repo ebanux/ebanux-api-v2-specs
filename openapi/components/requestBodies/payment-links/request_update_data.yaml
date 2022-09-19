@@ -1,0 +1,36 @@
+description: The payment-links that will be update
+required: true
+content:
+  application/json:
+    schema:
+      required: [line_items]
+      allOf:
+        - $ref: ../../schemas/payment_link_request.yaml
+        - properties:
+            line_items:
+              type: array
+              items:
+                type: object
+                required: [id]
+                title: Line-Item
+                properties:
+                  id:
+                    type: string
+                  adjustable_quantity:
+                    type: object
+                    required: [enabled]
+                    title: Adjustable-Quantity
+                    properties:
+                      enabled:
+                        type: boolean
+                      minimum:
+                        type: integer
+                        minimum: 1
+                        maximum: 99
+                      maximum:
+                        type: integer
+                        minimum: 1
+                        maximum: 99
+                  quantity:
+                    type: integer
+                    minimum: 1

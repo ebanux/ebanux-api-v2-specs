@@ -1,0 +1,40 @@
+get:
+  tags:
+    - Payment-Links
+  operationId: get_payment_Links
+  summary: List all payment-links
+  description: |
+    Returns the list of your payment-links.
+  parameters:
+    - $ref: ../components/parameters/commons/query_limit.yaml
+    - $ref: ../components/parameters/commons/query_offset.yaml
+
+    - $ref: ../components/parameters/payment-links/query_filter_by_content.yaml
+    - $ref: ../components/parameters/commons/query_filter_by_active.yaml
+    - $ref: ../components/parameters/payment-links/query_filter_by_submit_type.yaml
+    - $ref: ../components/parameters/commons/query_filter_by_currency.yaml
+    - $ref: ../components/parameters/payment-links/query_filter_by_allow_promotion_codes.yaml
+
+    - $ref: ../components/parameters/commons/query_filter_by_created_before.yaml
+    - $ref: ../components/parameters/commons/query_filter_by_created_after.yaml
+    - $ref: ../components/parameters/commons/query_filter_by_updated_before.yaml
+    - $ref: ../components/parameters/commons/query_filter_by_updated_after.yaml
+  responses:
+    '200':
+      $ref: ../components/responses/payment-links/items.yaml
+    '401':
+      $ref: ../components/responses/commons/unauthorized.yaml
+post:
+  tags:
+    - Payment-Links
+  operationId: create_payment_link
+  summary: Create a payment-link
+  description: |
+    Add a new item.
+  requestBody:
+    $ref: ../components/requestBodies/payment-links/request_create_data.yaml
+  responses:
+    '200':
+      $ref: ../components/responses/payment-links/item.yaml
+    '401':
+      $ref: ../components/responses/commons/unauthorized.yaml

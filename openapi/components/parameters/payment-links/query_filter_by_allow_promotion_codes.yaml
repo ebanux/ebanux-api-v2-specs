@@ -1,0 +1,6 @@
+name: allow_promotion_codes
+in: query
+schema:
+  type: boolean
+  description: |
+    It allows to filter items by ***allow_promotion_codes*** attribute.

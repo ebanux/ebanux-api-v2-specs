@@ -1,0 +1,33 @@
+parameters:
+  - $ref: ../components/parameters/commons/path_item_id.yaml
+
+get:
+  tags:
+    - Payment-Links
+  operationId: get_payment_link
+  summary: Retrieve a payment-link
+  description: |
+    Find and return the payment-link with the given id.
+  responses:
+    '200':
+      $ref: ../components/responses/payment-links/item.yaml
+    '401':
+      $ref: ../components/responses/commons/unauthorized.yaml
+    '404':
+      $ref: ../components/responses/commons/item_not_found.yaml
+post:
+  tags:
+    - Payment-Links
+  operationId: update_payment_link
+  summary: Update a payment-link
+  description: |
+    Find and update the payment-link with the given id.
+  requestBody:
+    $ref: ../components/requestBodies/payment-links/request_update_data.yaml
+  responses:
+    '200':
+      $ref: ../components/responses/payment-links/item.yaml
+    '401':
+      $ref: ../components/responses/commons/unauthorized.yaml
+    '404':
+      $ref: ../components/responses/commons/item_not_found.yaml

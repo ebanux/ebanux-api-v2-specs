@@ -21,7 +21,7 @@ tags:
   - name: Prices
     description: |
       TODO: ...
-  - name: Payment Links
+  - name: Payment-Links
     description: |
       TODO: ...
   - name: Customers
@@ -45,6 +45,10 @@ paths:
     $ref: paths/products.yaml
   /products/{id}:
     $ref: paths/products@{id}.yaml
+  /payment/links:
+    $ref: paths/payment@links.yaml
+  /payment/links/{id}:
+    $ref: paths/payment@links@{id}.yaml
   /customers:
     $ref: paths/customers.yaml
   /customers/{id}:

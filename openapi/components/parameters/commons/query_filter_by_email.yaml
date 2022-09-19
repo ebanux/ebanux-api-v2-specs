@@ -3,4 +3,4 @@ in: query
 schema:
   type: string
   description: |
-    It allows to filter items by email.
+    It allows to filter items by ***email*** attribute.
