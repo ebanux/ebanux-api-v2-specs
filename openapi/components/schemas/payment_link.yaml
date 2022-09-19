@@ -77,6 +77,8 @@ properties:
         type: array
         items:
           type: string
+          minLength: 2
+          maxLength: 2
   shipping_options:
     type: array
     items:
