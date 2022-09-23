@@ -1,0 +1,6 @@
+name: valid
+in: query
+schema:
+  type: boolean
+  description: |
+    It allows to filter items by ***valid*** attribute.

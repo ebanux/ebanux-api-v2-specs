@@ -1,0 +1,43 @@
+description: The coupon that will be create
+required: true
+content:
+  application/json:
+    schema:
+      required: [currency, discount]
+      allOf:
+        - $ref: ../../schemas/coupon_request.yaml
+        - properties:
+            id:
+              type: string
+              description: Item identifier
+            currency:
+              $ref: ../../schemas/currency.yaml
+            discount:
+              oneOf:
+                - type: integer
+                  minimum: 1
+                  description: "When the discount is represented as an amount."
+                - type: string
+                  minLength: 2
+                  maxLength: 7
+                  description: "When the discount is represented as a percentage."
+            applies_to:
+              type: array
+              items:
+                type: string
+            duration:
+              type: string
+              enum:
+                - forever
+                - once
+                - repeating
+              default: once
+            duration_in_months:
+              type: number
+              minimum: 0
+            max_redemptions:
+              type: number
+              minimum: 1
+            redeem_by:
+              allOf:
+                - $ref: ../../schemas/timestamps.yaml

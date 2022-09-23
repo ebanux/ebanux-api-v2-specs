@@ -1,0 +1,47 @@
+parameters:
+  - $ref: ../components/parameters/commons/path_item_id.yaml
+
+get:
+  tags:
+    - Coupons
+  operationId: get_coupon
+  summary: Retrieve a coupon
+  description: |
+    Find and return the coupon with the given id.
+  responses:
+    '200':
+      $ref: ../components/responses/coupons/item.yaml
+    '401':
+      $ref: ../components/responses/commons/unauthorized.yaml
+    '404':
+      $ref: ../components/responses/commons/item_not_found.yaml
+post:
+  tags:
+    - Coupons
+  operationId: update_coupon
+  summary: Update a coupon
+  description: |
+    Find and update the coupon with the given id.
+  requestBody:
+    $ref: ../components/requestBodies/coupons/request_update_data.yaml
+  responses:
+    '200':
+      $ref: ../components/responses/coupons/item.yaml
+    '401':
+      $ref: ../components/responses/commons/unauthorized.yaml
+    '404':
+      $ref: ../components/responses/commons/item_not_found.yaml
+delete:
+  tags:
+    - Coupons
+  operationId: remove_coupon
+  summary: Remove a coupon
+  description: |
+    Find and remove the coupon with the given id.
+  responses:
+    '200':
+      $ref: ../components/responses/coupons/item.yaml
+    '401':
+      $ref: ../components/responses/commons/unauthorized.yaml
+    '404':
+      $ref: ../components/responses/commons/item_not_found.yaml

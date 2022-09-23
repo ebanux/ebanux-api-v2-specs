@@ -1,0 +1,10 @@
+name: duration
+in: query
+schema:
+  type: string
+  enum:
+    - once
+    - repeating
+    - forever
+  description: |
+    It allows to filter items by ***duration*** attribute.

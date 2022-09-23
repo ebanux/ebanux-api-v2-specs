@@ -1,0 +1,17 @@
+type: "object"
+title: Coupon
+properties:
+  name:
+    type: string
+  currency_options:
+    type: array
+    items:
+      type: object
+      title: Currency-Option
+      required: [ currency, amount_off ]
+      properties:
+        currency:
+          $ref: ./currency.yaml
+        amount_off:
+          type: number
+          minimum: 1

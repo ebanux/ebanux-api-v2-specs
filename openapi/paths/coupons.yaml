@@ -1,0 +1,43 @@
+get:
+  tags:
+    - Coupons
+  operationId: get_coupons
+  summary: List all coupons
+  description: |
+    Returns the list of your coupons.
+  parameters:
+    - $ref: ../components/parameters/commons/query_limit.yaml
+    - $ref: ../components/parameters/commons/query_offset.yaml
+
+    - $ref: ../components/parameters/coupons/query_filter_by_content.yaml
+    - $ref: ../components/parameters/commons/query_filter_by_name.yaml
+    - $ref: ../components/parameters/commons/query_filter_by_currency.yaml
+    - $ref: ../components/parameters/coupons/query_filter_by_duration.yaml
+    - $ref: ../components/parameters/coupons/query_filter_by_valid.yaml
+    - $ref: ../components/parameters/commons/query_filter_by_deleted.yaml
+
+    - $ref: ../components/parameters/commons/query_filter_by_created_before.yaml
+    - $ref: ../components/parameters/commons/query_filter_by_created_after.yaml
+    - $ref: ../components/parameters/commons/query_filter_by_updated_before.yaml
+    - $ref: ../components/parameters/commons/query_filter_by_updated_after.yaml
+    - $ref: ../components/parameters/coupons/query_filter_by_redeemed_before.yaml
+    - $ref: ../components/parameters/coupons/query_filter_by_redeemed_after.yaml
+  responses:
+    '200':
+      $ref: ../components/responses/coupons/items.yaml
+    '401':
+      $ref: ../components/responses/commons/unauthorized.yaml
+post:
+  tags:
+    - Coupons
+  operationId: create_coupon
+  summary: Create a coupon
+  description: |
+    Add a new item.
+  requestBody:
+    $ref: ../components/requestBodies/coupons/request_create_data.yaml
+  responses:
+    '200':
+      $ref: ../components/responses/coupons/item.yaml
+    '401':
+      $ref: ../components/responses/commons/unauthorized.yaml

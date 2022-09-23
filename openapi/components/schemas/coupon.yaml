@@ -1,0 +1,74 @@
+type: "object"
+title: Coupon
+properties:
+  id:
+    type: string
+    description: Item identifier
+  name:
+    type: string
+  valid:
+    type: boolean
+    default: true
+  currency:
+    $ref: ./currency.yaml
+  metadata:
+    type: string
+  amount_off:
+    type: number
+    minimum: 1
+  percent_off:
+    type: number
+    minimum: 0
+    maximum: 100
+  duration:
+    type: string
+    enum:
+      - forever
+      - once
+      - repeating
+  duration_in_months:
+    type: number
+    minimum: 0
+  max_redemptions:
+    type: number
+    minimum: 1
+  times_redeemed:
+    type: number
+    minimum: 0
+  currency_options:
+    type: array
+    items:
+      type: object
+      title: Currency-Option
+      properties:
+        currency:
+          $ref: ./currency.yaml
+        amount_off:
+          type: number
+          minimum: 1
+  applies_to:
+    type: object
+    title: Applies-To
+    properties:
+      products:
+        type: array
+        items:
+          type: string
+  redeem_by:
+    allOf:
+      - $ref: ./timestamps.yaml
+  created:
+    allOf:
+      - $ref: ./timestamps.yaml
+    description: ...
+  cognito_user_id:
+    type: string
+  origin:
+    type: string
+    default: platform
+    enum:
+      - platform
+      - connected
+  deleted:
+    type: boolean
+    default: false

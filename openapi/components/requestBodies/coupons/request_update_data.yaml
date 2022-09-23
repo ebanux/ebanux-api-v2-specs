@@ -1,0 +1,7 @@
+description: The coupon that will be update
+required: true
+content:
+  application/json:
+    schema:
+      allOf:
+        - $ref: ../../schemas/coupon_request.yaml
