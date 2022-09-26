@@ -1,0 +1,7 @@
+description: The promotion-code that will be update
+required: true
+content:
+  application/json:
+    schema:
+      allOf:
+        - $ref: ../../schemas/promotion_code_request.yaml

@@ -1,0 +1,33 @@
+parameters:
+  - $ref: ../components/parameters/commons/path_item_id.yaml
+
+get:
+  tags:
+    - Promotion-Codes
+  operationId: get_promotion_code
+  summary: Retrieve a promotion-code
+  description: |
+    Find and return the promotion-code with the given id.
+  responses:
+    '200':
+      $ref: ../components/responses/promotion-codes/item.yaml
+    '401':
+      $ref: ../components/responses/commons/unauthorized.yaml
+    '404':
+      $ref: ../components/responses/commons/item_not_found.yaml
+post:
+  tags:
+    - Promotion-Codes
+  operationId: update_promotion_code
+  summary: Update a promotion-code
+  description: |
+    Find and update the promotion-code with the given id.
+  requestBody:
+    $ref: ../components/requestBodies/promotion-codes/request_update_data.yaml
+  responses:
+    '200':
+      $ref: ../components/responses/promotion-codes/item.yaml
+    '401':
+      $ref: ../components/responses/commons/unauthorized.yaml
+    '404':
+      $ref: ../components/responses/commons/item_not_found.yaml

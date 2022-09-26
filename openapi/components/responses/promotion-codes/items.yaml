@@ -1,0 +1,18 @@
+description: Success
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        success:
+          type: boolean
+          default: true
+        result:
+          allOf:
+            - $ref: ../../schemas/pagination.yaml
+            - type: object
+              properties:
+                data:
+                  type: array
+                  items:
+                    $ref: ../../schemas/promotion_code.yaml

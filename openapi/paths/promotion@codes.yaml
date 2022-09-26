@@ -1,0 +1,42 @@
+get:
+  tags:
+    - Promotion-Codes
+  operationId: get_promotion_codes
+  summary: List all promotion-codes
+  description: |
+    Returns the list of your promotion-codes.
+  parameters:
+    - $ref: ../components/parameters/commons/query_limit.yaml
+    - $ref: ../components/parameters/commons/query_offset.yaml
+
+    - $ref: ../components/parameters/promotion-codes/query_filter_by_content.yaml
+    - $ref: ../components/parameters/promotion-codes/query_filter_by_code.yaml
+    - $ref: ../components/parameters/promotion-codes/query_filter_by_coupon.yaml
+    - $ref: ../components/parameters/promotion-codes/query_filter_by_customer.yaml
+    - $ref: ../components/parameters/commons/query_filter_by_active.yaml
+
+    - $ref: ../components/parameters/commons/query_filter_by_created_before.yaml
+    - $ref: ../components/parameters/commons/query_filter_by_created_after.yaml
+    - $ref: ../components/parameters/commons/query_filter_by_updated_before.yaml
+    - $ref: ../components/parameters/commons/query_filter_by_updated_after.yaml
+    - $ref: ../components/parameters/promotion-codes/query_filter_by_expired_before.yaml
+    - $ref: ../components/parameters/promotion-codes/query_filter_by_expired_after.yaml
+  responses:
+    '200':
+      $ref: ../components/responses/promotion-codes/items.yaml
+    '401':
+      $ref: ../components/responses/commons/unauthorized.yaml
+post:
+  tags:
+    - Promotion-Codes
+  operationId: create_promotion_code
+  summary: Create a promotion-code
+  description: |
+    Add a new item.
+  requestBody:
+    $ref: ../components/requestBodies/promotion-codes/request_create_data.yaml
+  responses:
+    '200':
+      $ref: ../components/responses/promotion-codes/item.yaml
+    '401':
+      $ref: ../components/responses/commons/unauthorized.yaml

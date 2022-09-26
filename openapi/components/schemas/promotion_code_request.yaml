@@ -1,0 +1,22 @@
+type: "object"
+properties:
+  active:
+    type: boolean
+    default: true
+  restrictions:
+    type: object
+    title: Restriction
+    properties:
+      currency_options:
+        type: array
+        items:
+          type: object
+          title: Currency-Option
+          required: [ currency, minimum_amount ]
+          properties:
+            currency:
+              $ref: ./currency.yaml
+            minimum_amount:
+              type: number
+              minimum: 0
+

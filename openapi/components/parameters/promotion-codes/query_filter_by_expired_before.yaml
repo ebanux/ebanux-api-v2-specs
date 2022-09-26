@@ -1,0 +1,7 @@
+name: expired_before
+in: query
+schema:
+  type: string
+  format: date-time-iso8601
+  description: |
+    It allows to filter items where the ***expires_at*** field is ***before*** a certain date.

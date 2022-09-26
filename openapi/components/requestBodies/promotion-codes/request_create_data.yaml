@@ -1,0 +1,33 @@
+description: The promotion-code that will be create
+required: true
+content:
+  application/json:
+    schema:
+      required: [coupon]
+      allOf:
+        - $ref: ../../schemas/promotion_code_request.yaml
+        - properties:
+            coupon:
+              type: string
+            code:
+              type: string
+            customer:
+              type: string
+            expires_at:
+              allOf:
+                - $ref: ../../schemas/timestamps.yaml
+              description: ...
+            max_redemptions:
+              type: integer
+              minimum: 1
+            restrictions:
+              type: object
+              properties:
+                first_time_transaction:
+                  type: boolean
+                minimum_amount:
+                  type: integer
+                  minimum: 1
+                minimum_amount_currency:
+                  $ref: ../../schemas/currency.yaml
+

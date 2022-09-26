@@ -21,6 +21,9 @@ tags:
   - name: Coupons
     description: |
       TODO: ...
+  - name: Promotion-Codes
+    description: |
+      TODO: ...
   - name: Prices
     description: |
       TODO: ...
@@ -64,6 +67,10 @@ paths:
     $ref: paths/coupons.yaml
   /coupons/{id}:
     $ref: paths/coupons@{id}.yaml
+  /promotion/codes:
+    $ref: paths/promotion@codes.yaml
+  /promotion/codes/{id}:
+    $ref: paths/promotion@codes@{id}.yaml
 security:
   - AWS-Cognito: []
 

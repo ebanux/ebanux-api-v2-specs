@@ -1,0 +1,6 @@
+name: coupon
+in: query
+schema:
+  type: string
+  description: |
+    It allows to filter items by ***coupon.id*** attribute.
