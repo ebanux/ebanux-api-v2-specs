@@ -5,7 +5,7 @@ properties:
   active:
     type: boolean
   currency_options:
-    $ref: ./currency_options_request.yaml
+    $ref: ./price_currency_options_request.yaml
   lookup_key:
     type: string
     maxLength: 200

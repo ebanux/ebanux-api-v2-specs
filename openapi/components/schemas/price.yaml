@@ -9,7 +9,7 @@ properties:
   currency:
     $ref: ./currency.yaml
   metadata:
-    type: string
+    type: object
   nickname:
     type: string
   product:
@@ -37,7 +37,7 @@ properties:
       - tiered
   currency_options:
     allOf:
-      - $ref: ./currency_options.yaml
+      - $ref: ./price_currency_options.yaml
       - properties:
           tiers:
             type: array

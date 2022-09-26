@@ -36,7 +36,7 @@ content:
               type: number
               minimum: 0
             max_redemptions:
-              type: number
+              type: integer
               minimum: 1
             redeem_by:
               allOf:

@@ -11,7 +11,7 @@ properties:
   description:
     type: string
   metadata:
-    type: string
+    type: object
   name:
     type: string
   images:

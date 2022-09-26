@@ -21,7 +21,7 @@ properties:
       - $ref: ./shipping.yaml
     description: ...
   metadata:
-    type: string
+    type: object
   balance:
     type: number
   cash_balance:
